@@ -6,7 +6,7 @@
 // @description Tema scuro di flarum, pensato per gameloop.it
 // @author      YouWon (https://github.com/YouWon)
 // @copyright   COPYRIGHT (C) 2017 YouWon (https://github.com/YouWon). ALL RIGHTS RESERVED.
-// @version     0.2
+// @version     0.3
 // @grant       none
 // ==/UserScript==
 
@@ -160,7 +160,7 @@ THE SOFTWARE.
       s.type = 'text/css';
       // CSS FORUM
       var txt = `
-        body { color: #e0e0e0; }
+        body { color: #e0e0e0; background: #202020; }
         .Hero { background: #232425 !important; }
         #content { background-color : #202020 !important; }
         .FormControl { background-color: #607080 !important; color: #e0e0e0 !important; }
@@ -182,7 +182,7 @@ THE SOFTWARE.
         .username { color: #e0b060 !important; }
         .Scrubber-handle { background: #303035 !important; }
         .Dropdown-menu { color: #b0b060 !important; }
-        .App { background: black !important; }
+        .App { background: #202020; }
         .DiscussionListItem-title { color: #d0d0d0 !important; }
         div.DiscussionListItem:hover { background-color: #202025 !important; }
         div.DiscussionListItem-content { background-color: #202025 !important; }
@@ -196,6 +196,10 @@ THE SOFTWARE.
         .Modal-content { background: #303035; }
         .Modal-body { background: #303035; }
         .unread .DiscussionListItem-count { color: #5e7591; }
+        .DiscussionList-loadMore { color: #303035; }
+        .affix .DiscussionPage-list { background: #202025; }
+        span.hljs-title { color: #dd6060; }
+        span.hljs-built_in { color: #89c300; }
       `;
       s.innerHTML = txt;
       var h = document.getElementsByTagName('head')[0];
@@ -254,4 +258,3 @@ THE SOFTWARE.
 
 
 })();
-
