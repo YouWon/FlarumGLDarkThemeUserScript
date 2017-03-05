@@ -182,6 +182,8 @@ THE SOFTWARE.
         .username { color: #e0b060 !important; }
         .Scrubber-handle { background: #303035 !important; }
         .Dropdown-menu { color: #b0b060 !important; }
+        ul.Dropdown-menu { background: #252525 !important; }
+        a.PostPreview:hover { background: #d0d0d0 !important; }
         .App { background: #202020; }
         .DiscussionListItem-title { color: #d0d0d0 !important; }
         div.DiscussionListItem:hover { background-color: #202025 !important; }
