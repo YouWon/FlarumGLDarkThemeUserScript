@@ -6,7 +6,7 @@
 // @description Tema scuro di flarum, pensato per gameloop.it
 // @author      YouWon (https://github.com/YouWon)
 // @copyright   COPYRIGHT (C) 2017 YouWon (https://github.com/YouWon). ALL RIGHTS RESERVED.
-// @version     0.1
+// @version     0.2
 // @grant       none
 // ==/UserScript==
 
@@ -195,6 +195,7 @@ THE SOFTWARE.
         .Post-body code { background: #5e5e5e; color: #e0e0e0; }
         .Modal-content { background: #303035; }
         .Modal-body { background: #303035; }
+        .unread .DiscussionListItem-count { color: #5e7591; }
       `;
       s.innerHTML = txt;
       var h = document.getElementsByTagName('head')[0];
@@ -249,7 +250,7 @@ THE SOFTWARE.
     catch(e) { console.error('Eccezione 10: ' + e); }
 
     return;
-  }  // if(isBlog) {
+  }  // if(isBlog && bDarkTheme) {
 
 
 })();
