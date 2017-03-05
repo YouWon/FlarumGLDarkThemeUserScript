@@ -6,7 +6,7 @@
 // @description Dark theme for flarum.
 // @author      YouWon (https://github.com/YouWon)
 // @copyright   COPYRIGHT (C) 2017 YouWon (https://github.com/YouWon). ALL RIGHTS RESERVED.
-// @version     0.4
+// @version     0.5
 // @grant       none
 // ==/UserScript==
 
@@ -198,7 +198,7 @@ THE SOFTWARE.
         .unread .DiscussionListItem-count { color: #5e7591; }
         .DiscussionList-loadMore { color: #303035; }
         .affix .DiscussionPage-list { background: #202025; }
-        span.hljs-title { color: #dd6060; }
+        span.hljs-string, span.hljs-title { color: #dd6060; }
         span.hljs-built_in { color: #89c300; }
       `;
       s.innerHTML = txt;
