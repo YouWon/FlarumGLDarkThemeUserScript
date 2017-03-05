@@ -6,7 +6,7 @@
 // @description Dark theme for flarum.
 // @author      YouWon (https://github.com/YouWon)
 // @copyright   COPYRIGHT (C) 2017 YouWon (https://github.com/YouWon). ALL RIGHTS RESERVED.
-// @version     0.5
+// @version     0.6
 // @grant       none
 // ==/UserScript==
 
@@ -183,6 +183,9 @@ THE SOFTWARE.
         .Scrubber-handle { background: #303035 !important; }
         .Dropdown-menu { color: #b0b060 !important; }
         ul.Dropdown-menu { background: #252525 !important; }
+        ul.Dropdown-menu > li > a { color: #b0b0b0 !important; }
+        ul.Dropdown-menu > li > a:hover { color: #404040 !important; }
+        .Dropdown-menu > li > button { color: #607080 !important; }
         a.PostPreview:hover { background: #d0d0d0 !important; }
         .App { background: #202020; }
         .DiscussionListItem-title { color: #d0d0d0 !important; }
