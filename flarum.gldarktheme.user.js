@@ -205,6 +205,8 @@ THE SOFTWARE.
         .affix .DiscussionPage-list { background: #202025; }
         span.hljs-string, span.hljs-title { color: #dd6060; }
         span.hljs-built_in { color: #89c300; }
+        li.item-notificationGrid > table.NotificationGrid { background: #252525 !important; }
+        legend { color: #c0c0c0; }
       `;
       s.innerHTML = txt;
       var h = document.getElementsByTagName('head')[0];
