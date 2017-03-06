@@ -6,7 +6,7 @@
 // @description Tema scuro di flarum, pensato per gameloop.it
 // @author      YouWon (https://github.com/YouWon)
 // @copyright   COPYRIGHT (C) 2017 YouWon (https://github.com/YouWon). ALL RIGHTS RESERVED.
-// @version     0.9
+// @version     1.0
 // @grant       none
 // ==/UserScript==
 
@@ -213,6 +213,12 @@ THE SOFTWARE.
         .NotificationGroup-header { color: #90a0b0 !important; }
         .App::before { background: #202025; }
         .App-content { background: #202020; }
+        .Header-logo {
+          background: transparent;
+          background: -moz-linear-gradient(left, rgba(230, 230, 230, 1) 0%, rgba(230, 230, 230, 1) 46%, rgba(32, 32, 37, 0) 46%, rgba(32, 32, 37, 0) 100%);
+          background: -webkit-linear-gradient(left, rgba(230, 230, 230, 1) 0%,rgba(230, 230, 230, 1) 46%,rgba(32, 32, 37, 0) 46%, rgba(32, 32, 37, 0) 100%);
+          background: linear-gradient(to right, rgba(230, 230, 230, 1) 0%,rgba(230, 230, 230, 1) 46%,rgba(32, 32, 37, 0) 46%, rgba(32, 32, 37, 0) 100%);
+        }
       `;
       s.innerHTML = txt;
       var h = document.getElementsByTagName('head')[0];
@@ -259,6 +265,7 @@ THE SOFTWARE.
         .post-content a:hover { color: #a3d1ff; }
         .main-pagination .page-numbers, .main-pagination a { background: transparent; }
         .post-content h1, .post-content h2, .post-content h3, .post-content h4, .post-content h5, .post-content h6 { color: #d0d0d0; }
+        div.textwidget > table > tbody > tr > td { background: #404045 !important; border-color: #808080 !important; }
       `;
       s.innerHTML = txt;
       var h = document.getElementsByTagName('head')[0];
@@ -266,7 +273,20 @@ THE SOFTWARE.
     }
     catch(e) { console.error('Eccezione 10: ' + e); }
 
-    return;
+    try {
+      // Trovare il banner e impostare quello trasparente
+      var img = document.getElementsByTagName('img');
+      for (var i = 0; i < img.length; ++i) {
+        if (img[i].src === 'http://g-ecx.images-amazon.com/images/G/29/associates/it_logo.png') {
+          // console.debug('Banner trovato e link sovrascritto');
+          img[i].src = 'http://i68.tinypic.com/oadf76.png';
+          break;
+        }
+      }
+    }
+    catch(e) { console.error('Eccezione 11: ' + e); }
+
+
   }  // if(isBlog && bDarkTheme) {
 
 
