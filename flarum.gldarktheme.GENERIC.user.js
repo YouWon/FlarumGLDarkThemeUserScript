@@ -211,6 +211,8 @@ THE SOFTWARE.
         .NotificationList { background: #202023 !important; }
         a.Notification:hover { background: #353538 !important; }
         .NotificationGroup-header { color: #90a0b0 !important; }
+        .App::before { background: #202025; }
+        .App-content { background: #202020; }
       `;
       s.innerHTML = txt;
       var h = document.getElementsByTagName('head')[0];
