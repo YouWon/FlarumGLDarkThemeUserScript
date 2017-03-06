@@ -213,6 +213,12 @@ THE SOFTWARE.
         .NotificationGroup-header { color: #90a0b0 !important; }
         .App::before { background: #202025; }
         .App-content { background: #202020; }
+        .Header-logo {
+          background: transparent;
+          background: -moz-linear-gradient(left, rgba(230, 230, 230, 1) 0%, rgba(230, 230, 230, 1) 46%, rgba(32, 32, 37, 0) 46%, rgba(32, 32, 37, 0) 100%);
+          background: -webkit-linear-gradient(left, rgba(230, 230, 230, 1) 0%,rgba(230, 230, 230, 1) 46%,rgba(32, 32, 37, 0) 46%, rgba(32, 32, 37, 0) 100%);
+          background: linear-gradient(to right, rgba(230, 230, 230, 1) 0%,rgba(230, 230, 230, 1) 46%,rgba(32, 32, 37, 0) 46%, rgba(32, 32, 37, 0) 100%);
+        }
       `;
       s.innerHTML = txt;
       var h = document.getElementsByTagName('head')[0];
