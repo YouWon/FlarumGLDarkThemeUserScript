@@ -6,7 +6,7 @@
 // @description Dark theme for flarum.
 // @author      YouWon (https://github.com/YouWon)
 // @copyright   COPYRIGHT (C) 2017 YouWon (https://github.com/YouWon). ALL RIGHTS RESERVED.
-// @version     0.8
+// @version     0.9
 // @grant       none
 // ==/UserScript==
 
@@ -92,7 +92,6 @@ THE SOFTWARE.
 
     console.debug('Rilevato forum');
     try {
-      console.debug("arLogos.length: " + arLogos.length);
       for(var i = 0; i < arLogos.length; ++i) {
         if(arLogos[i].length != 6)
           console.error('ERRORE: in arLogos l\'array n.' + i + ' non ha il numero giusto di elementi. Correggere.');
@@ -123,7 +122,7 @@ THE SOFTWARE.
         var needsWhite = arLogos[nCustomLogoTheBest][5];
         if(width === 0)
           width = nCustomLogoDefWidth;
-        if((scale != 1) || (top !== 0) || (top !== 0) || needsWhite) {
+        if((scale != 1) || (top !== 0) || (left !== 0) || needsWhite) {
           // creare un div per clippare l'immagine
           try {
             var imgtag = document.getElementById('home-link').innerHTML;
@@ -234,7 +233,6 @@ THE SOFTWARE.
 
 
   if(isBlog && bDarkTheme) {
-
 
     console.debug('Rilevato blog');
     try {
