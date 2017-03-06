@@ -6,7 +6,7 @@
 // @description Dark theme for flarum.
 // @author      YouWon (https://github.com/YouWon)
 // @copyright   COPYRIGHT (C) 2017 YouWon (https://github.com/YouWon). ALL RIGHTS RESERVED.
-// @version     1.0
+// @version     1.1
 // @grant       none
 // ==/UserScript==
 
@@ -214,6 +214,7 @@ THE SOFTWARE.
         .App::before { background: #202025; }
         .App-content { background: #202020; }
       `;
+
       s.innerHTML = txt;
       var h = document.getElementsByTagName('head')[0];
       h.appendChild(s);
