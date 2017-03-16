@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name        GL Dark Theme
 // @namespace   gameloop.it
-// @include     http://forum.gameloop.it/*
+// @include     https://forum.gameloop.it/*
 // @include     https://gameloop.it/*
 // @description Tema scuro di flarum, pensato per gameloop.it
 // @author      YouWon (https://github.com/YouWon)
