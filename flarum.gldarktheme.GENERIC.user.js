@@ -40,7 +40,7 @@ THE SOFTWARE.
 
 
   var isForum = false;
-  try { if(document.getElementById('flarum-loading') !== null) isForum = true; } catch(e) { console.error('Eccezione 1: ' + e); }
+  try { if (document.getElementById('flarum-loading') !== null) isForum = true; } catch(e) { console.error('Eccezione 1: ' + e); }
 
   var nCustomLogoDefWidth = 180;
 
@@ -53,7 +53,7 @@ THE SOFTWARE.
 
   var arLogos = [];
   // FORUM
-  if(isForum) {
+  if (isForum) {
 
     try { arLogos = [
       /* vuoto */  ["", 1, 0, 0, 0, false],  // url, scale, top, left, width, needsWhite
@@ -92,15 +92,15 @@ THE SOFTWARE.
 
     console.debug('Rilevato forum');
     try {
-      for(var i = 0; i < arLogos.length; ++i) {
-        if(arLogos[i].length != 6)
+      for (var i = 0; i < arLogos.length; ++i) {
+        if (arLogos[i].length != 6)
           console.error('ERRORE: in arLogos l\'array n.' + i + ' non ha il numero giusto di elementi. Correggere.');
       }
     }
     catch(e) { console.error('Eccezione 3: ' + e); }
 
-    if(bCustomLogo) {
-      if(bCustomLogoRandom) {
+    if (bCustomLogo) {
+      if (bCustomLogoRandom) {
         try {
           do {
             nCustomLogoTheBest = Math.floor(Math.random() * arLogos.length);
@@ -120,9 +120,9 @@ THE SOFTWARE.
         var left = arLogos[nCustomLogoTheBest][3];
         var width = arLogos[nCustomLogoTheBest][4];
         var needsWhite = arLogos[nCustomLogoTheBest][5];
-        if(width === 0)
+        if (width === 0)
           width = nCustomLogoDefWidth;
-        if((scale != 1) || (top !== 0) || (left !== 0) || needsWhite) {
+        if ((scale != 1) || (top !== 0) || (left !== 0) || needsWhite) {
           // creare un div per clippare l'immagine
           try {
             var imgtag = document.getElementById('home-link').innerHTML;
@@ -135,12 +135,12 @@ THE SOFTWARE.
           var txt = '#Header-logo-div { ' +
             'width: ' + (width + 20) + 'px; min-width: ' + width + 'px; max-width: ' + width + 'px; ' +
             'text-align: center; overflow: hidden; ';
-          if(needsWhite)
+          if (needsWhite)
             txt += 'background-color: white; ';
           txt += '} .Header-logo { transform: scale(' + scale + '); position: relative; overflow: hidden; ';
-          if(top !== 0)
+          if (top !== 0)
             txt += 'top: ' + top + 'px; ';
-          if(left !== 0)
+          if (left !== 0)
             txt += 'left: ' + left + 'px; ';
           txt += '}';
           s.innerHTML = txt;
@@ -149,9 +149,9 @@ THE SOFTWARE.
         }
       }
       catch(e) { console.error('Eccezione 7: ' + e); }
-    }  // if(bCustomLogo) {
+    }  // if (bCustomLogo) {
 
-    if(!bDarkTheme)
+    if (!bDarkTheme)
       return;
 
     try {
@@ -223,19 +223,19 @@ THE SOFTWARE.
 
 
     return;
-  }  // if(isForum) {}
+  }  // if (isForum)
 
 
   var isBlog = false;
 
   try {
-    if(document.getElementsByClassName('logo-image').length !== 0)
+    if (document.getElementsByClassName('logo-image').length !== 0)
       isBlog = true;
   }
   catch(e) { console.error('Eccezione 9: ' + e); }
 
 
-  if(isBlog && bDarkTheme) {
+  if (isBlog && bDarkTheme) {
 
     console.debug('Rilevato blog');
     try {
@@ -269,8 +269,7 @@ THE SOFTWARE.
     catch(e) { console.error('Eccezione 10: ' + e); }
 
 
-
-  }  // if(isBlog && bDarkTheme) {
+  }  // if (isBlog && bDarkTheme) {
 
 
 })();
