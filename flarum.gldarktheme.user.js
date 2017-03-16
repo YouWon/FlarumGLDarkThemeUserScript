@@ -6,7 +6,7 @@
 // @description Tema scuro di flarum, pensato per gameloop.it
 // @author      YouWon (https://github.com/YouWon)
 // @copyright   COPYRIGHT (C) 2017 YouWon (https://github.com/YouWon). ALL RIGHTS RESERVED.
-// @version     1.1
+// @version     1.2
 // @grant       none
 // ==/UserScript==
 
