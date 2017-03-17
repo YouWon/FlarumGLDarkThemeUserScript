@@ -6,7 +6,7 @@
 // @description Dark theme for flarum.
 // @author      YouWon (https://github.com/YouWon)
 // @copyright   COPYRIGHT (C) 2017 YouWon (https://github.com/YouWon). ALL RIGHTS RESERVED.
-// @version     1.2
+// @version     1.3
 // @grant       none
 // ==/UserScript==
 
@@ -105,7 +105,7 @@ THE SOFTWARE.
           do {
             nCustomLogoTheBest = Math.floor(Math.random() * arLogos.length);
           }
-          while(arLogos[nCustomLogoTheBest][0].length === 0);
+          while (arLogos[nCustomLogoTheBest][0].length === 0);
           console.debug('Logo random scelto: ' + nCustomLogoTheBest + ' - ' + arLogos[nCustomLogoTheBest][0]);
         }
         catch(e) { console.error('Eccezione 4: ' + e); }
@@ -229,8 +229,20 @@ THE SOFTWARE.
   var isBlog = false;
 
   try {
-    if (document.getElementsByClassName('logo-image').length !== 0)
-      isBlog = true;
+    var ar = document.getElementsByTagName('meta');
+    if ((ar.length > 19) && (ar[19].getAttribute('content').startsWith('WordPress'))) {
+        isBlog = true;
+    }
+    else {
+      console.debug('Avviso: il meta tag "generator" non si trova nella posizione aspettata.');
+      for (var i = 0; i < ar.length; ++i) {
+        if ((ar[i].getAttribute('name') === 'generator') && ar[i].getAttribute('content').startsWith('WordPress')) {
+          console.debug('Meta tag "generator" trovato nella posizione: ' + i);
+          isBlog = true;
+          break;
+        }
+      }
+    }
   }
   catch(e) { console.error('Eccezione 9: ' + e); }
 
@@ -268,8 +280,6 @@ THE SOFTWARE.
     }
     catch(e) { console.error('Eccezione 10: ' + e); }
 
-
-  }  // if (isBlog && bDarkTheme) {
 
 
 })();

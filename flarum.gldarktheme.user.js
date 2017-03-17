@@ -6,7 +6,7 @@
 // @description Tema scuro di flarum, pensato per gameloop.it
 // @author      YouWon (https://github.com/YouWon)
 // @copyright   COPYRIGHT (C) 2017 YouWon (https://github.com/YouWon). ALL RIGHTS RESERVED.
-// @version     1.2
+// @version     1.3
 // @grant       none
 // ==/UserScript==
 
@@ -105,7 +105,7 @@ THE SOFTWARE.
           do {
             nCustomLogoTheBest = Math.floor(Math.random() * arLogos.length);
           }
-          while(arLogos[nCustomLogoTheBest][0].length === 0);
+          while (arLogos[nCustomLogoTheBest][0].length === 0);
           console.debug('Logo random scelto: ' + nCustomLogoTheBest + ' - ' + arLogos[nCustomLogoTheBest][0]);
         }
         catch(e) { console.error('Eccezione 4: ' + e); }
@@ -239,8 +239,20 @@ THE SOFTWARE.
   var isBlog = false;
 
   try {
-    if (document.getElementsByClassName('logo-image').length !== 0)
-      isBlog = true;
+    var ar = document.getElementsByTagName('meta');
+    if ((ar.length > 19) && (ar[19].getAttribute('content').startsWith('WordPress'))) {
+        isBlog = true;
+    }
+    else {
+      console.debug('Avviso: il meta tag "generator" non si trova nella posizione aspettata.');
+      for (var i = 0; i < ar.length; ++i) {
+        if ((ar[i].getAttribute('name') === 'generator') && ar[i].getAttribute('content').startsWith('WordPress')) {
+          console.debug('Meta tag "generator" trovato nella posizione: ' + i);
+          isBlog = true;
+          break;
+        }
+      }
+    }
   }
   catch(e) { console.error('Eccezione 9: ' + e); }
 
@@ -282,9 +294,8 @@ THE SOFTWARE.
       // Trovare il banner e impostare quello trasparente
       var img = document.getElementsByTagName('img');
       for (var i = 0; i < img.length; ++i) {
-        if (img[i].src === 'http://g-ecx.images-amazon.com/images/G/29/associates/it_logo.png') {
-          // console.debug('Banner trovato e link sovrascritto');
-          img[i].src = 'http://i68.tinypic.com/oadf76.png';
+        if (img[i].src === 'http://i.imgur.com/mLeZS91.png') {
+          img[i].src = 'http://i.imgur.com/HkY2qF6.png';
           break;
         }
       }
